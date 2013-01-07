@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>jQuery sectionNav</title>
+<meta nam='description' content='A jQuery plugin to build a sticky navigation of a article’s sections with highlighting while scrolling.'>
+<meta name='keywords' content='sticky nav, scrolling nav, navigation, james wilson, jimmynotjim, JS, javascript'>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+	<header class="page-header" role="banner">
+		<h1><a href="#">jQuery sectionNav</a></h1>
+		<p>A jQuery plugin to build a sticky navigation of a article’s sections with highlighting while scrolling.</p>
+	</header>
+
+	<div class="main" role="main">
+		<article class="post-article">
+			<h2>Usage</h2>
+
+			<h3>Import</h3>
+
+			<p>Start by importing the script to your page, the best location is in the footer, but no matter what make sure it follows your jquery file.</p>
+
+			<p><code>html
+			&lt;script src=“jquery.sectionNav.min.js”&gt;&lt;/script&gt;
+			</code></p>
+
+			<h3>Build your page</h3>
+
+			<p>Include a class or id hook in the element you want to apply the plugin to and include an <code>&lt;h3&gt;</code> for each section you want to inlcude in the navigation.</p>
+
+			<p><code>html
+			&lt;div class=“main”&gt;
+				&lt;article class=“post-article”&gt;
+					&lt;h1 class=“post-heading”&gt;This is the main heading for the article&lt;/h1&gt;
+					&lt;h2 class=“post-sub-headling”&gt;This is a sub-heading for the article&lt;/h2&gt;
+					&lt;p&gt;Yada yada yada...&lt;/p&gt;
+					&lt;h3&gt;This is a section heading&lt;/h3&gt;
+					&lt;p&gt;More yada yada...&lt;/p&gt;
+					&lt;h3&gt;Another section heading&lt;/h3&gt;
+					&lt;p&gt;More more yada...&lt;/p&gt;
+				&lt;/article&gt;
+			&lt;/div&gt;
+			</code></p>
+
+			<h3>Initialise</h3>
+
+			<p>Now initialise the plugin with your hook for the article</p>
+
+			<p><code>
+			$(‘.post-article’).sectionNav();
+			</code></p>
+
+			<p>and the plugin scans the article, grabs all the <code>&lt;h3&gt;</code>s, adds them to the navigation list and inserts the list before the article. It’s that easy&#8230;well almost.</p>
+
+			<h3>Styling</h3>
+
+			<p>To keep the plugin simple there are no styles added to the navigation, that’s all up to you. The nav structure looks like this and includes class names in <a href="https://twitter.com/csswizardry">@csswizardry’s</a> <a href="http://inuitcss.com/">inuit.css</a> framework style:</p>
+
+			<p><code>html
+			&lt;nav class=“section-nav”&gt;
+				&lt;span class=“section-nav-heading”&gt;
+				&lt;ol class=“section-list”&gt;
+					&lt;li class=“section-list-item”&gt;
+						&lt;a class=“section-link”&gt;
+			</code></p>
+
+			<p>Check out <a href="#">this demo</a> to get an idea on what you can do.</p>
+
+			<h2>Options</h2>
+
+			<p>There are a few customizable options in sectionNav besides the element you apply it to using key: value pairs. Here are the defaults.</p>
+
+			<p><code>
+			$(‘.post-article’).sectionNav({
+				sections: ‘h3’,
+				tittleText: ‘Jump To’,
+				fixedMargin: 40
+			});
+			</code></p>
+
+			<h3>Sections</h3>
+
+			<p>As mentioned, the script automatically searches for <code>&lt;h3&gt;</code>s within the target article. If your page structure differs, feel free to target another element, like a <code>&lt;h2&gt;</code> or <code>&lt;h4&gt;</code> or even a class, like <code>.section-headline</code>.</p>
+
+			<h3>Title Text</h3>
+
+			<p>sectionNav’s default title text is ‘Jump To’, but feel free to change it to whatever works for you, like ‘Article Sections’ or ‘Page Navigation’</p>
+
+			<h3>Fixed Margin</h3>
+
+			<p>This is the <code>top</code> dimension you set for the <code>.section-nav.fixed</code> class, which is applied as the user scrolls down the page and is removed as they scroll above the article. You definitely want to set this if you don’t use the default 40px, otherwise the nav will jump around as the user scrolls past the top of the article.</p>
+
+			<h2>License</h2>
+
+			<p>sectionNav is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC Attribution-ShareAlike license</a>. This means you can recreate, edit or share the plugin as long as you maintain the same open licensing.</p>
+
+			<h2>Authors</h2>
+
+			<p><a href="http://jimmynotjim.com">James Wilson (@jimmynotjim)</a></p>
+
+			<p>With a bit of guidance from <a href="https://github.com/ericclemmons">Eric Clemmons (@ericclemmons)</a></p>
+		</article>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="jquery.sectionNav.min.js"></script>
+	<script>
+		$('.post-article').sectionNav({
+			sections: 'h2',
+			titleText: 'Sections',
+			fixedMargin: 60
+		});
+	</script>
+</body>
+</html>
