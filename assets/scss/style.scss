@@ -34,14 +34,14 @@ $body_color: #333;
 $heading_color: #111;
 
 $body_family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
-$heading_family: "Open Sans Condensed", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+$heading_family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
 
 // Link colors
-$link: #6bac60;
-$link_hover: #78aace;
+$link: #1996c7;
+$link_hover: #fff;
 
 // Select colors
-$select: #78aace;
+$select: #71b4ce;
 $select_color: #fff;
 
 // Default Colors
@@ -65,6 +65,33 @@ $green: #6bac60;
 	}
 }
 
+@mixin linebehind($top: 1.1em, $thickness:2px, $color: #333) {
+	position: relative;
+	text-align: center;
+
+	&::before {
+		border-top: $thickness solid $color;
+		content: '';
+		margin: 0 auto;
+		position: absolute;
+		top: $top;
+		right: 0;
+		left: 0;
+		width: 75%;
+		z-index: -1;
+	}
+
+	span {
+		background: #fff;
+		padding: 0 .5em;
+	}
+}
+
+.unstyled-list {
+	padding-left: 0;
+	list-style: none;
+}
+
 // ==========================================================
 // = Import normalize baseline and grid                     =
 // ==========================================================
@@ -77,220 +104,77 @@ $green: #6bac60;
 // = Your custom styles go here                             =
 // ==========================================================
 
-body{
-	background: url(../images/bg.png) 0 2px;
+body {
+	background: url('http://responsablecss.com/assets/images/baseline.png');
 }
+.page-header {
+	background-color: rgb(19, 130, 173);
+	margin-bottom: 1em;
+	padding: 1.15em 0;
+	text-align: center;
 
-header#worlds_birth{
-	>div{
-		@include row();
-		hgroup{
-			@include column(12);
-			padding-top: 1.5em;
-			margin-bottom: 2px; // Figure out 2px weirdness with hgroups
-		}
-		nav ul{
-			@include clearfix();
-			@include column(12);
-			margin-bottom: 1.5em;
-			text-align: center;
-			font-weight:bold;
-			li{
-				@include column(3, 0);
-				a{
-					display:block;
-					background: $link;
-					padding: .75em 0;
-					border-right: 1px solid #fff;
-					color:#fff;
-					&:hover, &:focus{
-						background:$link_hover;
-					}
-				}
-			}
-		}
+	p {
+		margin-bottom: 0;
 	}
 }
 
-#content{
-	>div{
-		@include row();
-		>section{
-			@include column(8);
-		}
-		>aside{
-			@include column(4);
-			>div:last-child{
-				p{
-					margin-bottom:0;
-				}
-				div:last-child p{
-					margin-bottom: 1.5em;
-				}
-			}
-		}
-		>div{
-			clear:both;
-			>div{
-				@include column(12);
-			}
-			section{
-				background:#ccc;
-				div{
-					background: $green;
-					height: 3em;
-					margin-bottom: 1.5em;
-					border: $gutter_width*0.5 solid #ddd;
-					border-top:0;
-					border-bottom:0;
-				}
-			}
-			section#one,
-			section#two,
-			section#three,
-			section#four,
-			section#five,
-			section#six,
-			section#seven,
-			section#eight,
-			section#nine,
-			section#ten,
-			section#eleven{
-				div:last-child{
-					background:#eee;
-				}
-			}
-			section#one{
-				>div:first-child{@include column(1);}
-				>div:last-child{@include column(11);}
-			}
-			section#two{
-				>div:first-child{@include column(2);}
-				>div:last-child{@include column(10);}
-			}
-			section#three{
-				>div:first-child{@include column(3);}
-				>div:last-child{@include column(9);}
-			}
-			section#four{
-				>div:first-child{@include column(4);}
-				>div:last-child{@include column(8);}
-			}
-			section#five{
-				>div:first-child{@include column(5);}
-				>div:last-child{@include column(7);}
-			}
-			section#six{
-				>div:first-child{@include column(6);}
-				>div:last-child{@include column(6);}
-			}
-			section#seven{
-				>div:first-child{@include column(7);}
-				>div:last-child{@include column(5);}
-			}
-			section#eight{
-				>div:first-child{@include column(8);}
-				>div:last-child{@include column(4);}
-			}
-			section#nine{
-				>div:first-child{@include column(9);}
-				>div:last-child{@include column(3);}
-			}
-			section#ten{
-				>div:first-child{@include column(10);}
-				>div:last-child{@include column(2);}
-			}
-			section#eleven{
-				>div:first-child{@include column(11);}
-				>div:last-child{@include column(1);}
-			}
-			section#thirds{
-				>div{@include column(4);}
-			}
-			section#quarters{
-				>div{@include column(3);}
-			}
-			section#sixths{
-				>div{@include column(2);}
-			}
-			section#twelfths{
-				>div{@include column(1);}
-			}
-		}
+.page-title,
+.page-byline {
+	color: #fff;
+}
+
+.page-title {
+	@extend .dayumdayumdayum;
+	font-family: "Alfa Slab One", Georgia, serif;
+	margin-bottom: .25em;
+}
+
+.page-byline {
+	@extend .gamma;
+
+	margin-bottom: .1em;
+	padding-top: .4em;
+}
+
+.main {
+	margin: 0 auto;
+	padding: 0 120px;
+	position: relative;
+}
+
+.scroll-nav {
+	margin-left: -110px;
+	position: absolute;
+	top: 100px;
+	width: 100px;
+
+	&.fixed {
+		position: fixed;
+		top: 60px;
 	}
 }
 
+.scroll-nav-list {
+	@extend .unstyled-list;
+}
 
-/**
- * NOTE
- * Don't add breakpoints aimed at device pixel widths,
- * add them where they suit best for your design.
- */
-@media screen and (max-width: 750px){
-	#content{
-		>div{
-			>section{
-				@include column(12);
-			}
-			>aside{
-				@include column(12, 0);
-				>h2{
-					@include column(12);
-					padding-top: 0.25em;
-				    margin-bottom: 0.5em;
-				}
-				div#lists{
-					>div{
-						@include column(4);
-					}
-					ul, ol{
-						padding-left: 10%;
-					}
-				}
-				>div:last-child{
-					@include column(12, 0);
-					>h2{
-						@include column(12);
-						padding-top: 0.25em;
-					    margin-bottom: 0.5em;
-					}
-					>div{
-						@include column(6);
-					}
-				}
-			}
-		}
-	}
+.post-article {
+//	margin-left: 100px;
+}
+
+.intro {
+	@extend .epsilon;
+}
+
+pre {
+	background-color: darken(#fff, 3%);
+	font-size: 75%;
+	line-height: 18px;
+	padding: 6px 10px;
 }
 
 @media screen and (max-width: 520px){
-	#content{
-		>div{
-			>aside{
-				div#lists{
-					>div{
-						@include column(12);
-					}
-				}
-				>div:last-child{
-					>h2{
-						@include column(12);
-						padding-top: 0.25em;
-					    margin-bottom: 0.5em;
-					}
-					>div{
-						@include column(12);
-					}
-					p{
-						margin-bottom:0;
-					}
-					div:last-child p{
-						margin-bottom: 1.5em;
-					}
-				}
-			}
-		}
-	}
+
 }
 
 

@@ -1,3 +1,8 @@
+.unstyled-list, .scroll-nav-list {
+  padding-left: 0;
+  list-style: none;
+}
+
 /* normalize.css v2.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -370,7 +375,7 @@ table {
 /* = Set up baseline                                        = */
 /* ========================================================== */
 html {
-  font-size: 100.01%;
+  font-size: 100%;
 }
 
 body {
@@ -384,12 +389,12 @@ body {
 }
 
 ::selection {
-  background: #78aace;
+  background: #71b4ce;
   color: white;
 }
 
 ::-moz-selection {
-  background: #78aace;
+  background: #71b4ce;
   color: white;
 }
 
@@ -402,63 +407,75 @@ img::-moz-selection {
 }
 
 body {
-  -webkit-tap-highlight-color: #78aace;
+  -webkit-tap-highlight-color: #71b4ce;
 }
 
 a {
-  color: #6bac60;
+  color: #1996c7;
+  text-decoration: none;
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear;
 }
 a:hover, a:focus {
-  color: #78aace;
+  background: #71b4ce;
+  color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  font-family: "Open Sans Condensed", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
   color: #111111;
 }
 
-h1 {
-  font-size: 3em;
+.dayumdayumdayum, .page-title {
+  font-size: 4.125em;
+  font-weight: 400;
   line-height: 1;
-  padding-top: 0.53em;
-  margin-bottom: 0.5em;
 }
 
-h2 {
+h1, .alpha {
   font-size: 2em;
+  font-weight: 800;
   padding-top: 0.25em;
   margin-bottom: 0.5em;
 }
 
-h3 {
+h2, .beta {
   font-size: 1.5em;
+  font-weight: 800;
   line-height: 1;
   padding-top: 0.35em;
   margin-bottom: 0.65em;
 }
 
-h4 {
+h3, .gamma, .page-byline {
   font-size: 1.2em;
+  font-weight: 800;
   line-height: 1.25;
   padding-top: 0.45em;
   margin-bottom: 0.8em;
 }
 
-h5 {
+h4, .delta {
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 800;
+  line-height: 1.25;
+  padding-top: 0.45em;
+  margin-bottom: 0.8em;
+}
+
+h5, .epsilon, .intro {
+  font-size: 1.2em;
+  font-weight: 600;
   padding-top: 0.6em;
   margin-bottom: 0.9em;
 }
 
-h6 {
+h6, .zeta {
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 0;
 }
 
@@ -648,7 +665,7 @@ blockquote {
 
 mark {
   line-height: 1.5;
-  background: #78aace;
+  background: #71b4ce;
   color: white;
 }
 
@@ -687,500 +704,54 @@ hr {
 }
 
 body {
-  background: url(../images/bg.png) 0 2px;
+  background: url("http://responsablecss.com/assets/images/baseline.png");
 }
 
-header#worlds_birth > div {
-  *zoom: 1;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  max-width: 1008px;
-  margin: 0 auto;
-  padding: 0 0;
-}
-header#worlds_birth > div:before, header#worlds_birth > div:after {
-  content: "";
-  display: table;
-}
-header#worlds_birth > div:after {
-  clear: both;
-}
-header#worlds_birth > div hgroup {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 100%;
-  padding: 0 20px;
-  padding-top: 1.5em;
-  margin-bottom: 2px;
-}
-header#worlds_birth > div nav ul {
-  *zoom: 1;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 100%;
-  padding: 0 20px;
-  margin-bottom: 1.5em;
+.page-header {
+  background-color: #1382ad;
+  margin-bottom: 1em;
+  padding: 1.15em 0;
   text-align: center;
-  font-weight: bold;
 }
-header#worlds_birth > div nav ul:before, header#worlds_birth > div nav ul:after {
-  content: "";
-  display: table;
-}
-header#worlds_birth > div nav ul:after {
-  clear: both;
-}
-header#worlds_birth > div nav ul li {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 25%;
-  padding: 0 0;
-}
-header#worlds_birth > div nav ul li a {
-  display: block;
-  background: #6bac60;
-  padding: .75em 0;
-  border-right: 1px solid #fff;
-  color: #fff;
-}
-header#worlds_birth > div nav ul li a:hover, header#worlds_birth > div nav ul li a:focus {
-  background: #78aace;
-}
-
-#content > div {
-  *zoom: 1;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  max-width: 1008px;
-  margin: 0 auto;
-  padding: 0 0;
-}
-#content > div:before, #content > div:after {
-  content: "";
-  display: table;
-}
-#content > div:after {
-  clear: both;
-}
-#content > div > section {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 66.66667%;
-  padding: 0 20px;
-}
-#content > div > aside {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 33.33333%;
-  padding: 0 20px;
-}
-#content > div > aside > div:last-child p {
+.page-header p {
   margin-bottom: 0;
 }
-#content > div > aside > div:last-child div:last-child p {
-  margin-bottom: 1.5em;
-}
-#content > div > div {
-  clear: both;
-}
-#content > div > div > div {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 100%;
-  padding: 0 20px;
-}
-#content > div > div section {
-  background: #ccc;
-}
-#content > div > div section div {
-  background: #6bac60;
-  height: 3em;
-  margin-bottom: 1.5em;
-  border: 20px solid #dddddd;
-  border-top: 0;
-  border-bottom: 0;
-}
-#content > div > div section#one div:last-child,
-#content > div > div section#two div:last-child,
-#content > div > div section#three div:last-child,
-#content > div > div section#four div:last-child,
-#content > div > div section#five div:last-child,
-#content > div > div section#six div:last-child,
-#content > div > div section#seven div:last-child,
-#content > div > div section#eight div:last-child,
-#content > div > div section#nine div:last-child,
-#content > div > div section#ten div:last-child,
-#content > div > div section#eleven div:last-child {
-  background: #eee;
-}
-#content > div > div section#one > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 8.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#one > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 91.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#two > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 16.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#two > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 83.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#three > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 25%;
-  padding: 0 20px;
-}
-#content > div > div section#three > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 75%;
-  padding: 0 20px;
-}
-#content > div > div section#four > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 33.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#four > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 66.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#five > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 41.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#five > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 58.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#six > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 50%;
-  padding: 0 20px;
-}
-#content > div > div section#six > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 50%;
-  padding: 0 20px;
-}
-#content > div > div section#seven > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 58.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#seven > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 41.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#eight > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 66.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#eight > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 33.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#nine > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 75%;
-  padding: 0 20px;
-}
-#content > div > div section#nine > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 25%;
-  padding: 0 20px;
-}
-#content > div > div section#ten > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 83.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#ten > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 16.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#eleven > div:first-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 91.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#eleven > div:last-child {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 8.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#thirds > div {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 33.33333%;
-  padding: 0 20px;
-}
-#content > div > div section#quarters > div {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 25%;
-  padding: 0 20px;
-}
-#content > div > div section#sixths > div {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 16.66667%;
-  padding: 0 20px;
-}
-#content > div > div section#twelfths > div {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline;
-  float: left;
-  width: 8.33333%;
-  padding: 0 20px;
+
+.page-title,
+.page-byline {
+  color: #fff;
 }
 
-/**
- * NOTE
- * Don't add breakpoints aimed at device pixel widths,
- * add them where they suit best for your design.
- */
-@media screen and (max-width: 750px) {
-  #content > div > section {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 100%;
-    padding: 0 20px;
-  }
-  #content > div > aside {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 100%;
-    padding: 0 0;
-  }
-  #content > div > aside > h2 {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 100%;
-    padding: 0 20px;
-    padding-top: 0.25em;
-    margin-bottom: 0.5em;
-  }
-  #content > div > aside div#lists > div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 33.33333%;
-    padding: 0 20px;
-  }
-  #content > div > aside div#lists ul, #content > div > aside div#lists ol {
-    padding-left: 10%;
-  }
-  #content > div > aside > div:last-child {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 100%;
-    padding: 0 0;
-  }
-  #content > div > aside > div:last-child > h2 {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 100%;
-    padding: 0 20px;
-    padding-top: 0.25em;
-    margin-bottom: 0.5em;
-  }
-  #content > div > aside > div:last-child > div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 50%;
-    padding: 0 20px;
-  }
+.page-title {
+  font-family: "Alfa Slab One", Georgia, serif;
+  margin-bottom: .25em;
 }
-@media screen and (max-width: 520px) {
-  #content > div > aside div#lists > div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 100%;
-    padding: 0 20px;
-  }
-  #content > div > aside > div:last-child > h2 {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 100%;
-    padding: 0 20px;
-    padding-top: 0.25em;
-    margin-bottom: 0.5em;
-  }
-  #content > div > aside > div:last-child > div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
-    float: left;
-    width: 100%;
-    padding: 0 20px;
-  }
-  #content > div > aside > div:last-child p {
-    margin-bottom: 0;
-  }
-  #content > div > aside > div:last-child div:last-child p {
-    margin-bottom: 1.5em;
-  }
+
+.page-byline {
+  margin-bottom: .1em;
+  padding-top: .4em;
+}
+
+.main {
+  margin: 0 auto;
+  padding: 0 120px;
+  position: relative;
+}
+
+.scroll-nav {
+  margin-left: -110px;
+  position: absolute;
+  top: 100px;
+  width: 100px;
+}
+.scroll-nav.fixed {
+  position: fixed;
+  top: 60px;
+}
+
+pre {
+  background-color: #f7f7f7;
+  font-size: 75%;
+  line-height: 18px;
+  padding: 6px 10px;
 }

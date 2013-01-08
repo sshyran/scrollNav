@@ -3,52 +3,71 @@
 <title>jQuery scrollNav</title>
 <meta nam='description' content='A jQuery plugin to build a sticky navigation of a article’s sections with highlighting while scrolling.'>
 <meta name='keywords' content='sticky nav, scrolling nav, navigation, james wilson, jimmynotjim, JS, javascript'>
-<link rel='stylesheet' href='file:///Users/jw/Repos/scrollNav/assets/css/style.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800|Vollkorn:400italic,700italic,400,700|Alfa+Slab+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<header class="page-header" role="banner">
-		<h1>jQuery scrollNav</h1>
-		<p>A jQuery plugin to build a sticky navigation from the content of an article.</p>
-		<p>Look to the left to see it in action or try [this demo][2] to get an idea of how it all works.</p>
+		<h1 class="page-title"><span>scrollNav.js</span></h1>
+		<h2 class="page-byline">A jQuery plugin for building a scrolling side nav</h2>
 	</header>
 
 	<div class="main" role="main">
 		<article class="post-article">
+			<p class="intro">Long articles and posts have always been difficult to scan and navigate. scrollNav.js is light jQuery plugin that grabs your page's existing content, divides it up into logical sections, and builds a customizable scrolling sidebar navigation.</p>
+
+			<div class="grab-it">
+				<a href="#">Grab the Source</a>
+				<a href="#">Fork the Repo</a>
+			</div>
+
+			<h2>Features</h2>
+			<ul>
+				<li>
+					<h3>Simple to setup</h3>
+					<p>With a single file import and function in your footer, you're on your way.</p>
+				</li>
+				<li>
+					<h3>Fully Customizable</h3>
+					<p>Very little styling is set for you, but the bit that is, is fully customizable.</p>
+				</li>
+				<li>
+					<h3>Tiny Size</h3>
+					<p>At 1.8kb min'd, scrollNav is pretty unintrusive. If you use Ajax to import initiate it, it's almost negligable.</p>
+				</li>
+			</ul>
+
 			<h2>Usage</h2>
 
 			<h3>Import</h3>
 
-			<p>Start by importing the script to your page, the best location is in the footer, but no matter what make sure it follows your jquery file.</p>
+			<p>Start by importing the script to your page, the best location is in the footer, but no matter what, make sure it follows your jquery file.</p>
 
-			<p><code>
-			&lt;script src=&quot;jquery.scrollNav.min.js&quot;&gt;&lt;/script&gt;
-			</code></p>
+			<p><pre>&lt;script src=&quot;jquery.scrollNav.min.js&quot;&gt;&lt;/script&gt;</pre></p>
 
 			<h3>Build your page</h3>
 
 			<p>Include a class or id hook in the element you want to apply the plugin to and include an <code>&lt;h3&gt;</code> for each section you want to inlcude in the navigation.</p>
 
-			<p><code>
-			&lt;div class=&quot;main&quot;&gt;
-			    &lt;article class=&quot;post-article&quot;&gt;
-			        &lt;h1 class=&quot;post-heading&quot;&gt;This is the main heading for the article&lt;/h1&gt;
-			        &lt;h2 class=&quot;post-sub-headling&quot;&gt;This is a sub-heading for the article&lt;/h2&gt;
-			        &lt;p&gt;Yada yada yada...&lt;/p&gt;
-			        &lt;h3&gt;This is a section heading&lt;/h3&gt;
-			        &lt;p&gt;More yada yada...&lt;/p&gt;
-			        &lt;h3&gt;Another section heading&lt;/h3&gt;
-			        &lt;p&gt;More more yada...&lt;/p&gt;
-			    &lt;/article&gt;
-			&lt;/div&gt;
-			</code></p>
+<p><pre>
+&lt;div class=&quot;main&quot;&gt;
+    &lt;article class=&quot;post-article&quot;&gt;
+        &lt;h1 class=&quot;post-heading&quot;&gt;This is the main heading for the article&lt;/h1&gt;
+        &lt;h2 class=&quot;post-sub-headling&quot;&gt;This is a sub-heading for the article&lt;/h2&gt;
+        &lt;p&gt;Yada yada yada...&lt;/p&gt;
+        &lt;h3&gt;This is a section heading&lt;/h3&gt;
+        &lt;p&gt;More yada yada...&lt;/p&gt;
+        &lt;h3&gt;Another section heading&lt;/h3&gt;
+        &lt;p&gt;More more yada...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</pre></p>
 
 			<h3>Initialise</h3>
 
 			<p>Now initialise the plugin with your hook for the article</p>
 
-			<p><code>
-			$('.post-article').scrollNav();
-			</code></p>
+			<p><pre>$('.post-article').scrollNav();</pre></p>
 
 			<p>and the plugin scans the article, grabs all the <code>&lt;h3&gt;</code>s, adds them to the navigation list and inserts the list before the article. It&#8217;s that easy&#8230;well almost.</p>
 
@@ -56,38 +75,34 @@
 
 			<p>To keep the plugin simple there are no styles added to the navigation, that&#8217;s all up to you. The nav structure looks like this and includes class names in <a href="https://twitter.com/csswizardry">@csswizardry&#8217;s</a> <a href="http://inuitcss.com/">inuit.css</a> framework style:</p>
 
-			<p><code>
-			&lt;nav class=&quot;scroll-nav&quot;&gt;
-			    &lt;span class=&quot;scroll-nav-heading&quot;&gt;
-			    &lt;ol class=&quot;scroll-nav-list&quot;&gt;
-			        &lt;li class=&quot;scroll-nav-item&quot;&gt;
-			            &lt;a class=&quot;scroll-nav-link&quot;&gt;
-			</code></p>
+<p><pre>
+&lt;nav class=&quot;scroll-nav&quot;&gt;
+    &lt;span class=&quot;scroll-nav-heading&quot;&gt;
+    &lt;ol class=&quot;scroll-nav-list&quot;&gt;
+        &lt;li class=&quot;scroll-nav-item&quot;&gt;
+            &lt;a class=&quot;scroll-nav-link&quot;&gt;
+</pre></p>
 
 			<p>There are also loaded and loading hooks added to the body element (similar to how Typekit handles font loading) to allow for css transitions or any other changes in css you&#8217;d need.</p>
 
-			<p><code>html
-			&lt;body class=&quot;sn-loading&quot;&gt;
-			</code></p>
+			<p><pre>&lt;body class=&quot;sn-loading&quot;&gt;</pre></p>
 
 			<p>turns into</p>
 
-			<p><code>
-			&lt;body class=&quot;sn-active&quot;&gt;
-			</code></p>
+			<p><pre>&lt;body class=&quot;sn-active&quot;&gt;</pre></p>
 
 			<h2>Options</h2>
 
 			<p>There are a few customizable options in scrollNav besides the element you apply it to using key : value pairs. Here are the defaults.</p>
 
-			<p><code>
-			$('.post-article').scrollNav({
-			    sections: 'h3',
-			    titleText: 'Jump To',
-			    fixedMargin: 40,
-			    animated: true
-			});
-			</code></p>
+<p><pre>
+$('.post-article').scrollNav({
+    sections: 'h3',
+    titleText: 'Jump To',
+    fixedMargin: 40,
+    animated: true
+});
+</pre></p>
 
 			<h3>Sections</h3>
 
