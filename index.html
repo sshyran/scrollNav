@@ -47,7 +47,7 @@
 
 			<h3>Build your page</h3>
 
-			<p>Include a class or id hook in the element you want to apply the plugin to and include an <code>&lt;h3&gt;</code> for each section you want to inlcude in the navigation.</p>
+			<p>Include a class or id hook on the element you want to apply the plugin to and include an <code>&lt;h3&gt;</code> for each section you want to inlcude in the navigation.</p>
 
 <p><pre>
 &lt;div class=&quot;main&quot;&gt;
@@ -93,12 +93,12 @@
 
 			<h2>Options</h2>
 
-			<p>There are a few customizable options in scrollNav besides the element you apply it to using key : value pairs. Here are the defaults.</p>
+			<p>There are a few customizable options in scrollNav using key : value pairs. Here are the defaults.</p>
 
 <p><pre>
 $('.post-article').scrollNav({
     sections: 'h3',
-    titleText: 'Jump To',
+    titleText: 'Scroll To',
     fixedMargin: 40,
     animated: true
 });
@@ -123,6 +123,10 @@ $('.post-article').scrollNav({
 			<h2>Errors</h2>
 
 			<p>The plugin will refuse to build and log an error message if it doesn&#8217;t find your desired container or any sections within the container. If the nav doesn&#8217;t show up on load, check your browser&#8217;s console.</p>
+
+			<h2>Issues</h2>
+
+			<p>There are a few known issues, including poor location updating when scrolling on touch devices. If you find any others please submit them to the issue tracker.</p>
 
 			<h2>License</h2>
 
