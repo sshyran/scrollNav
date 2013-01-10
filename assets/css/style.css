@@ -1,4 +1,4 @@
-.unstyled-list, .scroll-nav-list {
+.unstyled-list, .scroll-nav-list, .author-details {
   padding-left: 0;
   list-style: none;
 }
@@ -380,7 +380,7 @@ html {
 
 body {
   font-size: 100%;
-  color: #333333;
+  color: white;
   line-height: 1.5em;
   font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
   text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.01);
@@ -426,7 +426,7 @@ a:hover, a:focus {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
-  color: #111111;
+  color: white;
 }
 
 .dayumdayumdayum, .page-title {
@@ -703,8 +703,108 @@ hr {
   border: none;
 }
 
+@font-face {
+  font-family: 'scroll-nav-icons';
+  src: url("../fonts/scroll-nav-icons.eot");
+  src: url("../fonts/scroll-nav-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/scroll-nav-icons.woff") format("woff"), url("../fonts/scroll-nav-icons.ttf") format("truetype"), url("../fonts/scroll-nav-icons.svg#scroll-nav-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-info:before, .scroll-nav-link.usage:before {
+  content: '\2139';
+}
+
+/* 'ℹ' */
+.icon-home:before, .author-link.home:before {
+  content: '\2302';
+}
+
+/* '⌂' */
+.icon-cog:before, .scroll-nav-link.options:before {
+  content: '\2699';
+}
+
+/* '⚙' */
+.icon-attention:before, .scroll-nav-link.errors:before {
+  content: '\26a0';
+}
+
+/* '⚠' */
+.icon-eye:before {
+  content: '\e70a';
+}
+
+/* '' */
+.icon-code:before {
+  content: '\e714';
+}
+
+/* '' */
+.icon-publish:before, .scroll-nav-link.top:before {
+  content: '\e74d';
+}
+
+/* '' */
+.icon-flow-branch:before, .fork-it:before {
+  content: '\e791';
+}
+
+/* '' */
+.icon-gauge:before {
+  content: '\e7a2';
+}
+
+/* '' */
+.icon-traffic-cone:before, .scroll-nav-link.issues:before {
+  content: '\e7a3';
+}
+
+/* '' */
+.icon-cc:before, .scroll-nav-link.license:before {
+  content: '\e7a5';
+}
+
+/* '' */
+.icon-github:before, .author-link.github:before {
+  content: '\f300';
+}
+
+/* '' */
+.icon-twitter:before, .author-link.twitter:before {
+  content: '\f309';
+}
+
+/* '' */
+.icon-dribbble:before, .author-link.dribbble:before {
+  content: '\f31b';
+}
+
+/* '' */
+.icon-users:before, .scroll-nav-link.authors:before {
+  content: '👥';
+}
+
+/* '\1f465' */
+.icon-doc-text:before, .scroll-nav-link.features:before {
+  content: '📄';
+}
+
+/* '\1f4c4' */
+.icon-download:before, .grab-it:before {
+  content: '📥';
+}
+
+/* '\1f4e5' */
+.icon-clock:before {
+  content: '🕔';
+}
+
+/* '\1f554' */
 body {
   background: url("http://responsablecss.com/assets/images/baseline.png");
+  background: #E25A5A;
+  background: #EE6F3E;
 }
 
 .page-header {
@@ -734,19 +834,65 @@ body {
 
 .main {
   margin: 0 auto;
-  padding: 0 120px;
+  padding: 0 160px;
   position: relative;
 }
 
 .scroll-nav {
-  margin-left: -110px;
+  margin-left: -140px;
   position: absolute;
   top: 100px;
-  width: 100px;
+  width: 110px;
 }
 .scroll-nav.fixed {
   position: fixed;
   top: 60px;
+}
+
+.scroll-nav-item.active {
+  position: relative;
+}
+.scroll-nav-item.active:after {
+  content: '<';
+  font-weight: 700;
+  position: absolute;
+  right: 0;
+}
+
+.scroll-nav-link {
+  color: white;
+  padding-left: 25px;
+}
+.scroll-nav-link:before {
+  font-family: 'scroll-nav-icons';
+  position: absolute;
+  left: -2px;
+  text-align: center;
+  width: 20px;
+}
+
+.all-yours a:before {
+  font-family: scroll-nav-icons;
+}
+
+.author-name {
+  display: inline-block;
+}
+
+.author-details {
+  display: inline-block;
+  margin: 0;
+}
+.author-details li {
+  display: inline-block;
+}
+
+.author-link {
+  color: white;
+  display: block;
+}
+.author-link:before {
+  font-family: scroll-nav-icons;
 }
 
 pre {

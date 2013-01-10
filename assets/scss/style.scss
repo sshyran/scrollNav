@@ -30,7 +30,7 @@ $max_width: 1008px; // Set a maximum width of the site
 $baseline: 100%;
 
 // Font variables
-$body_color: #333;
+$body_color: white;
 $heading_color: #111;
 
 $body_family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
@@ -87,6 +87,12 @@ $green: #6bac60;
 	}
 }
 
+@mixin hiddenText {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 .unstyled-list {
 	padding-left: 0;
 	list-style: none;
@@ -104,8 +110,41 @@ $green: #6bac60;
 // = Your custom styles go here                             =
 // ==========================================================
 
+
+@font-face {
+	font-family: 'scroll-nav-icons';
+	src: url("../fonts/scroll-nav-icons.eot");
+	src: url("../fonts/scroll-nav-icons.eot?#iefix") format('embedded-opentype'),
+	url('../fonts/scroll-nav-icons.woff') format('woff'),
+	url('../fonts/scroll-nav-icons.ttf') format('truetype'),
+	url("../fonts/scroll-nav-icons.svg#scroll-nav-icons") format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-info:before { content: '\2139'; } /* 'ℹ' */
+.icon-home:before { content: '\2302'; } /* '⌂' */
+.icon-cog:before { content: '\2699'; } /* '⚙' */
+.icon-attention:before { content: '\26a0'; } /* '⚠' */
+.icon-eye:before { content: '\e70a'; } /* '' */
+.icon-code:before { content: '\e714'; } /* '' */
+.icon-publish:before { content: '\e74d'; } /* '' */
+.icon-flow-branch:before { content: '\e791'; } /* '' */
+.icon-gauge:before { content: '\e7a2'; } /* '' */
+.icon-traffic-cone:before { content: '\e7a3'; } /* '' */
+.icon-cc:before { content: '\e7a5'; } /* '' */
+.icon-github:before { content: '\f300'; } /* '' */
+.icon-twitter:before { content: '\f309'; } /* '' */
+.icon-dribbble:before { content: '\f31b'; } /* '' */
+.icon-users:before { content: '👥'; } /* '\1f465' */
+.icon-doc-text:before { content: '📄'; } /* '\1f4c4' */
+.icon-download:before { content: '📥'; } /* '\1f4e5' */
+.icon-clock:before { content: '🕔'; } /* '\1f554' */
+
 body {
 	background: url('http://responsablecss.com/assets/images/baseline.png');
+	background: #E25A5A;
+	background: #EE6F3E;
 }
 .page-header {
 	background-color: rgb(19, 130, 173);
@@ -138,15 +177,15 @@ body {
 
 .main {
 	margin: 0 auto;
-	padding: 0 120px;
+	padding: 0 160px;
 	position: relative;
 }
 
 .scroll-nav {
-	margin-left: -110px;
+	margin-left: -140px;
 	position: absolute;
 	top: 100px;
-	width: 100px;
+	width: 110px;
 
 	&.fixed {
 		position: fixed;
@@ -158,12 +197,121 @@ body {
 	@extend .unstyled-list;
 }
 
+.scroll-nav-item.active {
+	position: relative;
+
+	&:after {
+		content: '<';
+		font-weight: 700;
+		position: absolute;
+		right: 0;
+	}
+}
+
+.scroll-nav-link {
+	color: white;
+	padding-left: 25px;
+
+	&:before {
+		font-family: 'scroll-nav-icons';
+		position: absolute;
+		left: -2px;
+		text-align: center;
+		width: 20px;
+
+	}
+
+	&.top {
+		@extend .icon-publish;
+	}
+
+	&.features {
+		@extend .icon-doc-text;
+	}
+
+	&.usage {
+		@extend .icon-info;
+	}
+
+	&.options {
+		@extend .icon-cog;
+	}
+
+	&.errors {
+		@extend .icon-attention;
+	}
+
+	&.issues {
+		@extend .icon-traffic-cone;
+	}
+
+	&.license {
+		@extend .icon-cc;
+	}
+
+	&.authors {
+		@extend .icon-users;
+	}
+}
+
 .post-article {
 //	margin-left: 100px;
 }
 
 .intro {
 	@extend .epsilon;
+}
+
+.all-yours a:before {
+	font-family: scroll-nav-icons;
+}
+
+.grab-it {
+	@extend .icon-download;
+}
+
+.fork-it {
+	@extend .icon-flow-branch;
+}
+
+.author-name {
+	display: inline-block;
+}
+
+.author-details {
+	@extend .unstyled-list;
+
+	display: inline-block;
+	margin: 0;
+
+	li {
+		display: inline-block;
+	}
+}
+
+.author-link {
+	color: white;
+	display: block;
+
+	&:before {
+		font-family: scroll-nav-icons;
+	}
+
+	&.home {
+		@extend .icon-home;
+	}
+
+	&.github {
+		@extend .icon-github;
+	}
+
+	&.twitter {
+		@extend .icon-twitter;
+	}
+
+	&.dribbble {
+		@extend .icon-dribbble;
+	}
 }
 
 pre {

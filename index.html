@@ -16,9 +16,9 @@
 		<article class="post-article">
 			<p class="intro">Long articles and posts have always been difficult to scan and navigate. scrollNav.js is light jQuery plugin that grabs your page's existing content, divides it up into logical sections, and builds a customizable scrolling sidebar navigation.</p>
 
-			<div class="grab-it">
-				<a href="https://github.com/jimmynotjim/scrollNav/archive/master.zip">Grab the Source</a>
-				<a href="https://github.com/jimmynotjim/scrollNav">Fork the Repo</a>
+			<div class="all-yours">
+				<a href="https://github.com/jimmynotjim/scrollNav/archive/master.zip" class="grab-it">Grab the Source</a>
+				<a href="https://github.com/jimmynotjim/scrollNav" class="fork-it">Fork the Repo</a>
 			</div>
 
 			<h2>Features</h2>
@@ -134,9 +134,23 @@ $('.post-article').scrollNav({
 
 			<h2>Authors</h2>
 
-			<p>Written by <a href="http://jimmynotjim.com">James Wilson (@jimmynotjim)</a></p>
+			<div>
+				<p class="author-name">Written by James Wilson (@jimmynotjim)</p>
+				<ul class="author-details">
+					<li><a href="http://jimmynotjim.com" class="author-link home"></a></li>
+					<li><a href="http://github.com/jimmynotjim" class="author-link github"></a></li>
+					<li><a href="http://twitter.com/jimmynotjim" class="author-link twitter"></a></li>
+					<li><a href="http://dribbble.com/jimmynotjim" class="author-link dribbble"></a></li>
+				</ul>
+			</div>
 
-			<p>With a bit of guidance from <a href="https://github.com/ericclemmons">Eric Clemmons (@ericclemmons)</a></p>
+			<div>
+				<p class="author-name">With a bit of guidance from Eric Clemmons (@ericclemmons)</p>
+				<ul class="author-details">
+					<li><a href="http://github.com/ericclemmons" class="author-link github"></a></li>
+					<li><a href="http://twitter.com/ericclemmons" class="author-link twitter"></a></li>
+				</ul>
+			</div>
 		</article>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -146,6 +160,12 @@ $('.post-article').scrollNav({
 			sections: 'h2',
 			titleText: 'Sections',
 			fixedMargin: 60
+		});
+		var $item = $('.scroll-nav-link');
+		console.log($item);
+		$.each($item, function(){
+			$text = $(this).html().toLowerCase();
+			$(this).addClass($text);
 		});
 	</script>
 </body>
