@@ -380,7 +380,7 @@ html {
 
 body {
   font-size: 100%;
-  color: white;
+  color: #444444;
   line-height: 1.5em;
   font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
   text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.01);
@@ -426,7 +426,7 @@ a:hover, a:focus {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
-  color: white;
+  color: #444;
 }
 
 .dayumdayumdayum, .page-title {
@@ -711,7 +711,7 @@ hr {
   font-style: normal;
 }
 
-.icon-info:before, .scroll-nav-link.usage:before {
+.icon-info:before, .scroll-nav-link.colophon:before {
   content: '\2139';
 }
 
@@ -736,7 +736,7 @@ hr {
 }
 
 /* '' */
-.icon-code:before {
+.icon-code:before, .scroll-nav-link.usage:before {
   content: '\e714';
 }
 
@@ -802,9 +802,7 @@ hr {
 
 /* '\1f554' */
 body {
-  background: url("http://responsablecss.com/assets/images/baseline.png");
-  background: #E25A5A;
-  background: #EE6F3E;
+  background: #fcfcfc;
 }
 
 .page-header {
@@ -834,33 +832,32 @@ body {
 
 .main {
   margin: 0 auto;
-  padding: 0 160px;
+  padding: 0 17.3913043%;
   position: relative;
 }
 
 .scroll-nav {
-  margin-left: -140px;
+  margin-left: -15.21739%;
   position: absolute;
   top: 100px;
-  width: 110px;
+  width: 11.9565217%;
 }
 .scroll-nav.fixed {
   position: fixed;
   top: 60px;
 }
 
-.scroll-nav-item.active {
-  position: relative;
-}
-.scroll-nav-item.active:after {
-  content: '<';
+.scroll-nav-heading {
   font-weight: 700;
-  position: absolute;
-  right: 0;
+}
+
+.scroll-nav-item.active {
+  -webkit-transform: scale(1.25, 1.25);
+  font-weight: 700;
 }
 
 .scroll-nav-link {
-  color: white;
+  color: #1996c7;
   padding-left: 25px;
 }
 .scroll-nav-link:before {
@@ -888,8 +885,14 @@ body {
 }
 
 .author-link {
-  color: white;
+  color: #71b4ce;
   display: block;
+  font-size: 1.2em;
+}
+.author-link:hover {
+  -webkit-transform: scale(1.4, 1.4);
+  background: none;
+  color: #1996c7;
 }
 .author-link:before {
   font-family: scroll-nav-icons;

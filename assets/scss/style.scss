@@ -30,7 +30,7 @@ $max_width: 1008px; // Set a maximum width of the site
 $baseline: 100%;
 
 // Font variables
-$body_color: white;
+$body_color: #444;
 $heading_color: #111;
 
 $body_family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
@@ -142,9 +142,10 @@ $green: #6bac60;
 .icon-clock:before { content: '🕔'; } /* '\1f554' */
 
 body {
-	background: url('http://responsablecss.com/assets/images/baseline.png');
-	background: #E25A5A;
-	background: #EE6F3E;
+//	background: url('http://responsablecss.com/assets/images/baseline.png');
+//	background: #E25A5A;
+//	background: #EE6F3E;
+	background: #fcfcfc;
 }
 .page-header {
 	background-color: rgb(19, 130, 173);
@@ -177,15 +178,15 @@ body {
 
 .main {
 	margin: 0 auto;
-	padding: 0 160px;
+	padding: 0 17.3913043%;
 	position: relative;
 }
 
 .scroll-nav {
-	margin-left: -140px;
+	margin-left: -15.2173913%;
 	position: absolute;
 	top: 100px;
-	width: 110px;
+	width: 11.9565217%;
 
 	&.fixed {
 		position: fixed;
@@ -193,23 +194,21 @@ body {
 	}
 }
 
+.scroll-nav-heading {
+	font-weight: 700;
+}
+
 .scroll-nav-list {
 	@extend .unstyled-list;
 }
 
 .scroll-nav-item.active {
-	position: relative;
-
-	&:after {
-		content: '<';
-		font-weight: 700;
-		position: absolute;
-		right: 0;
-	}
+	-webkit-transform: scale(1.25,1.25);
+	font-weight: 700;
 }
 
 .scroll-nav-link {
-	color: white;
+	color: $link;
 	padding-left: 25px;
 
 	&:before {
@@ -230,7 +229,7 @@ body {
 	}
 
 	&.usage {
-		@extend .icon-info;
+		@extend .icon-code;
 	}
 
 	&.options {
@@ -251,6 +250,10 @@ body {
 
 	&.authors {
 		@extend .icon-users;
+	}
+
+	&.colophon {
+		@extend .icon-info;
 	}
 }
 
@@ -290,8 +293,15 @@ body {
 }
 
 .author-link {
-	color: white;
+	color: $select;
 	display: block;
+	font-size: 1.2em;
+
+	&:hover {
+		-webkit-transform: scale(1.4, 1.4);
+		background: none;
+		color: $link;
+	}
 
 	&:before {
 		font-family: scroll-nav-icons;
