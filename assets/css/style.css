@@ -741,6 +741,11 @@ hr {
 }
 
 /* '' */
+.icon-address:before {
+  content: '\e723';
+}
+
+/* '' */
 .icon-publish:before, .scroll-nav-link.top:before {
   content: '\e74d';
 }
