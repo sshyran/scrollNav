@@ -137,10 +137,10 @@ $green: #6bac60;
 .icon-github:before { content: '\f300'; } /* '' */
 .icon-twitter:before { content: '\f309'; } /* '' */
 .icon-dribbble:before { content: '\f31b'; } /* '' */
-.icon-users:before { content: '👥'; } /* '\1f465' */
-.icon-doc-text:before { content: '📄'; } /* '\1f4c4' */
-.icon-download:before { content: '📥'; } /* '\1f4e5' */
-.icon-clock:before { content: '🕔'; } /* '\1f554' */
+.icon-users:before { content: '\1f465''; } /* '\1f465' */
+.icon-doc-text:before { content: '\1f4c4'; } /* '\1f4c4' */
+.icon-download:before { content: '\1f4e5'; } /* '\1f4e5' */
+.icon-clock:before { content: '\1f554'; } /* '\1f554' */
 
 body {
 //	background: url('http://responsablecss.com/assets/images/baseline.png');
