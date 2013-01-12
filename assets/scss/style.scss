@@ -1,3 +1,6 @@
+@import 'bourbon';
+
+
 // *
 // * Responsable Grid System
 // *
@@ -7,6 +10,7 @@
 // * @author James Wilson http://jimmynotjim.com
 // * @version 1.0
 // */
+
 
 // ==========================================================
 // = Site Variables                                         =
@@ -52,7 +56,7 @@ $grey_dark: #666;
 $green: #6bac60;
 
 // The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack
-@mixin clearfix(){
+.clearfix {
 	*zoom:1;
 
 	&:before,
@@ -122,6 +126,31 @@ $green: #6bac60;
 	font-style: normal;
 }
 
+.icon-info:before,
+.icon-home:before,
+.icon-cog:before,
+.icon-attention:before,
+.icon-eye:before,
+.icon-code:before,
+.icon-address:before,
+.icon-publish:before,
+.icon-flow-branch:before,
+.icon-gauge:before,
+.icon-traffic-cone:before,
+.icon-cc:before,
+.icon-github:before,
+.icon-twitter:before,
+.icon-dribbble:before,
+.icon-users:before,
+.icon-doc-text:before,
+.icon-download:before,
+.icon-clock:before {
+	font-family: 'scroll-nav-icons';
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+}
+
 .icon-info:before { content: '\2139'; } /* 'ℹ' */
 .icon-home:before { content: '\2302'; } /* '⌂' */
 .icon-cog:before { content: '\2699'; } /* '⚙' */
@@ -143,9 +172,6 @@ $green: #6bac60;
 .icon-clock:before { content: '🕔'; } /* '\1f554' */
 
 body {
-//	background: url('http://responsablecss.com/assets/images/baseline.png');
-//	background: #E25A5A;
-//	background: #EE6F3E;
 	background: #fcfcfc;
 }
 .page-header {
@@ -166,8 +192,19 @@ body {
 
 .page-title {
 	@extend .dayumdayumdayum;
+	@extend .icon-address;
+
 	font-family: "Alfa Slab One", Georgia, serif;
+	left: -18px;
 	margin-bottom: .25em;
+	position: relative;
+
+	&:before {
+		font-size: 100px;
+		position: relative;
+		right: -34px;
+		top: -9px
+	}
 }
 
 .page-byline {
@@ -196,7 +233,7 @@ body {
 }
 
 .scroll-nav-heading {
-	font-weight: 700;
+	font-weight: 800;
 }
 
 .scroll-nav-list {
@@ -204,16 +241,21 @@ body {
 }
 
 .scroll-nav-item.active {
-	-webkit-transform: scale(1.25,1.25);
-	font-weight: 700;
+	@include transform(scale(1.25,1.25));
+
+	font-weight: 800;
+
+	a:hover {
+		font-weight: 800;
+	}
 }
 
 .scroll-nav-link {
 	color: $link;
+	display: block;
 	padding-left: 25px;
 
 	&:before {
-		font-family: 'scroll-nav-icons';
 		position: absolute;
 		left: -2px;
 		text-align: center;
@@ -258,16 +300,42 @@ body {
 	}
 }
 
-.post-article {
-//	margin-left: 100px;
-}
+.all-yours {
+	@extend .clearfix;
 
-.intro {
-	@extend .epsilon;
-}
+	padding: 80px 0 40px;
 
-.all-yours a:before {
-	font-family: scroll-nav-icons;
+	a {
+		@extend .epsilon;
+
+		@include background( linear-gradient( tint($link, 15%), shade($link, 15%) ) );
+		@include box-shadow( 0 1px 1px tint($link, 30%) inset, 0 -1px 1px shade($link, 25%) inset );
+
+		border: 1px solid shade($link, 25%);
+		border-bottom-color: shade($link, 40%);
+		border-radius: 6px;
+		color: white;
+		display: block;
+		float: left;
+		font-weight: 800;
+		margin: 0 7.5%;
+		padding: .5em 0;
+		text-align: center;
+		width: 35%;
+
+		&:before {
+			padding-right: 0.45em;
+		}
+
+		&:hover {
+			@include background( linear-gradient( tint($link, 30%), $link ) );
+			@include box-shadow( 0 1px 1px tint($link, 45%) inset, 0 -1px 1px shade($link, 10%) inset );
+
+			border-color: shade($link, 10%);
+			border-bottom-color: shade($link, 25%);
+			color: white;
+		}
+	}
 }
 
 .grab-it {
@@ -276,6 +344,20 @@ body {
 
 .fork-it {
 	@extend .icon-flow-branch;
+}
+
+.intro {
+	@extend .epsilon;
+}
+
+.features-list {
+	@extend .clearfix;
+	@extend .unstyled-list;
+
+	li {
+		float: left;
+		width: 33.33%;
+	}
 }
 
 .author-name {
@@ -294,18 +376,15 @@ body {
 }
 
 .author-link {
-	color: $select;
+	color: $link;
 	display: block;
 	font-size: 1.2em;
 
 	&:hover {
-		-webkit-transform: scale(1.4, 1.4);
+		@include transform(scale(1.4, 1.4));
+
 		background: none;
 		color: $link;
-	}
-
-	&:before {
-		font-family: scroll-nav-icons;
 	}
 
 	&.home {

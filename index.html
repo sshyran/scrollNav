@@ -15,15 +15,14 @@
 
 	<div class="main" role="main">
 		<article class="post-article">
-			<p class="intro">Long articles and posts have always been difficult to scan and navigate. scrollNav.js is light jQuery plugin that grabs your page's existing content, divides it up into logical sections, and builds a customizable scrolling sidebar navigation.</p>
-
 			<div class="all-yours">
 				<a href="https://github.com/jimmynotjim/scrollNav/archive/master.zip" class="grab-it">Grab the Source</a>
 				<a href="https://github.com/jimmynotjim/scrollNav" class="fork-it">Fork the Repo</a>
 			</div>
+			<p class="intro">scrollNav is a light jQuery that grabs your page's existing content, divides it up into logical sections and builds a customizable scrolling sidebar navigation. Scroll this page and watch it follow along w/ you.</p>
 
 			<h2>Features</h2>
-			<ul>
+			<ul class="features-list">
 				<li>
 					<h3>Simple to setup</h3>
 					<p>With a single file import and function in your footer, you're on your way.</p>
@@ -34,7 +33,7 @@
 				</li>
 				<li>
 					<h3>Tiny Size</h3>
-					<p>At 1.8kb min'd, scrollNav is pretty unintrusive. If you use Ajax to import and initiate it, it's almost negligable.</p>
+					<p>At 1.8kb min'd, scrollNav is pretty unintrusive.</p>
 				</li>
 			</ul>
 
@@ -164,7 +163,7 @@ $('.post-article').scrollNav({
 		$('.post-article').scrollNav({
 			sections: 'h2',
 			titleText: 'Sections',
-			fixedMargin: 60
+			fixedMargin: 65
 		});
 		var $item = $('.scroll-nav-link');
 		$.each($item, function(){
