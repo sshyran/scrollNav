@@ -219,7 +219,7 @@ figure {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -413,10 +413,10 @@ body {
 a {
   color: #1996c7;
   text-decoration: none;
-  -webkit-transition: all .2s linear;
-  -moz-transition: all .2s linear;
-  -o-transition: all .2s linear;
-  transition: all .2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 a:hover, a:focus {
   background: #71b4ce;
@@ -634,7 +634,7 @@ tfoot {
   font-style: italic;
 }
 tfoot td, tfoot th {
-  padding: .75em 10px;
+  padding: 0.75em 10px;
 }
 
 th, td, caption {
@@ -648,7 +648,7 @@ td, th {
 
 caption {
   border-bottom: 0;
-  padding: .75em 10px;
+  padding: 0.75em 10px;
   line-height: 1.45em;
   text-align: left;
   font-style: italic;
@@ -787,20 +787,20 @@ hr {
 
 /* '' */
 .icon-users:before, .scroll-nav-link.authors:before {
-  content: '👥';
+  content: '\a965';
 }
 
-/* '\1f465' */
+/* 'ꥥ' */
 .icon-doc-text:before, .scroll-nav-link.features:before {
-  content: '📄';
+  content: '\a902';
 }
 
-/* '\1f4c4' */
+/* '꤂' */
 .icon-download:before, .grab-it:before {
-  content: '📥';
+  content: '\a941';
 }
 
-/* '\1f4e5' */
+/* 'ꥁ' */
 .icon-clock:before {
   content: '🕔';
 }
@@ -837,12 +837,12 @@ body {
 
 .main {
   margin: 0 auto;
-  padding: 0 17.3913043%;
+  padding: 0 17.3913%;
   position: relative;
 }
 
 .scroll-nav {
-  margin-left: -15.21739%;
+  margin-left: -15.2173913%;
   position: absolute;
   top: 100px;
   width: 11.9565217%;
