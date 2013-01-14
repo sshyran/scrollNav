@@ -35,14 +35,15 @@ $baseline: 100%;
 
 // Font variables
 $body_color: #444;
+$header_bg: rgb(19, 130, 173);
 $heading_color: #111;
 
 $body_family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
 $heading_family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Sans-Serif;
 
 // Link colors
-$link: #1996c7;
-$link_hover: #fff;
+$link: #7EBCD4;
+$link-hover: #1996c7;
 
 // Select colors
 $select: #71b4ce;
@@ -175,9 +176,12 @@ body {
 	background: #fcfcfc;
 }
 .page-header {
-	background-color: rgb(19, 130, 173);
+	@include box-shadow(0 2px 10px 0px #777, 0 -1px 0 rgba(255,255,255,0.16) inset);
+
+	background-color: $header_bg;
+	border-bottom: 1px solid saturate(shade($header_bg, 30%), 45%);
 	margin-bottom: 1em;
-	padding: 1.15em 0;
+	padding: 1.15em 10%;
 	text-align: center;
 
 	p {
@@ -191,24 +195,27 @@ body {
 }
 
 .page-title {
-	@extend .dayumdayumdayum;
 	@extend .icon-address;
 
 	font-family: "Alfa Slab One", Georgia, serif;
-	left: -18px;
+	font-size: 2.5em;
+	font-weight: normal;
+	left: -12px;
+	line-height: 1em;
 	margin-bottom: .25em;
 	position: relative;
+	text-shadow: 0 -1px 0 saturate(shade($header_bg, 30%), 35%);
 
 	&:before {
-		font-size: 100px;
+		font-size: 60px;
 		position: relative;
-		right: -34px;
-		top: -9px
+		right: -22px;
+		top: -5px;
 	}
 }
 
 .page-byline {
-	@extend .gamma;
+	@extend .delta;
 
 	margin-bottom: .1em;
 	padding-top: .4em;
@@ -216,15 +223,16 @@ body {
 
 .main {
 	margin: 0 auto;
-	padding: 0 17.3913043%;
+	max-width: 1200px;
+	padding: 0 10%;
 	position: relative;
 }
 
 .scroll-nav {
-	margin-left: -15.2173913%;
+	margin-left: -10%;
 	position: absolute;
-	top: 100px;
-	width: 11.9565217%;
+	top: 74px;
+	width: 10%;
 
 	&.fixed {
 		position: fixed;
@@ -233,34 +241,33 @@ body {
 }
 
 .scroll-nav-heading {
+	display: block;
 	font-weight: 800;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 1.7em;
 }
 
 .scroll-nav-list {
 	@extend .unstyled-list;
 }
 
-.scroll-nav-item.active {
-	@include transform(scale(1.25,1.25));
-
-	font-weight: 800;
-
-	a:hover {
-		font-weight: 800;
-	}
-}
-
-.scroll-nav-link {
-	color: $link;
-	display: block;
-	padding-left: 25px;
+.scroll-nav-item {
+	margin: 0 auto;
+	overflow: hidden;
+	width: 25px;
 
 	&:before {
+		color: $link;
+		display: block;
 		position: absolute;
-		left: -2px;
+		pointer-events: none;
 		text-align: center;
-		width: 20px;
+		width: 25px;
+	}
 
+	&:hover:before {
+		color: $link_hover;
 	}
 
 	&.top {
@@ -272,7 +279,7 @@ body {
 	}
 
 	&.usage {
-		@extend .icon-code;
+		@extend .icon-eye;
 	}
 
 	&.options {
@@ -298,41 +305,70 @@ body {
 	&.colophon {
 		@extend .icon-info;
 	}
+
+	&.active {
+		@include transform( scale(1.3, 1.3) );
+
+		color: $link_hover;
+		font-weight: 800;
+
+		.scroll-nav-link {
+			color: $link_hover;
+		}
+
+		&:before {
+			color: $link_hover;
+		}
+
+		a:hover {
+			font-weight: 800;
+		}
+	}
+}
+
+.scroll-nav-link {
+	display: block;
+	margin: 0 auto;
+	padding-left: 26px;
+}
+
+.post-article {
+	padding: 80px 0;
 }
 
 .all-yours {
 	@extend .clearfix;
+	@extend .unstyled-list;
+}
 
-	padding: 80px 0 40px;
-
+.your-item {
 	a {
 		@extend .epsilon;
 
-		@include background( linear-gradient( tint($link, 15%), shade($link, 15%) ) );
-		@include box-shadow( 0 1px 1px tint($link, 30%) inset, 0 -1px 1px shade($link, 25%) inset );
+		@include background( linear-gradient( tint($link_hover, 15%), shade($link_hover, 15%) ) );
+		@include box-shadow( 0 1px 1px tint($link_hover, 30%) inset, 0 -1px 1px shade($link_hover, 25%) inset );
 
-		border: 1px solid shade($link, 25%);
-		border-bottom-color: shade($link, 40%);
+		border: 1px solid shade($link_hover, 25%);
+		border-bottom-color: shade($link_hover, 40%);
 		border-radius: 6px;
 		color: white;
 		display: block;
-		float: left;
 		font-weight: 800;
-		margin: 0 7.5%;
+		margin: 0 auto 20px;
 		padding: .5em 0;
 		text-align: center;
-		width: 35%;
+		width: 14em;
 
 		&:before {
 			padding-right: 0.45em;
 		}
 
 		&:hover {
-			@include background( linear-gradient( tint($link, 30%), $link ) );
-			@include box-shadow( 0 1px 1px tint($link, 45%) inset, 0 -1px 1px shade($link, 10%) inset );
+			@include background( linear-gradient( tint($link_hover, 30%), $link_hover ) );
+			@include box-shadow( 0 1px 1px tint($link_hover, 45%) inset, 0 -1px 1px shade($link_hover, 10%) inset );
 
-			border-color: shade($link, 10%);
-			border-bottom-color: shade($link, 25%);
+			border-color: shade($link_hover, 10%);
+			border-bottom-color: shade($link_hover, 25%);
 			color: white;
 		}
 	}
@@ -347,16 +383,34 @@ body {
 }
 
 .intro {
-	@extend .epsilon;
+	@extend .gamma;
 }
 
 .features-list {
 	@extend .clearfix;
 	@extend .unstyled-list;
 
-	li {
-		float: left;
-		width: 33.33%;
+	margin-top: 60px;
+}
+
+.feature {
+	text-align: center;
+
+	&:before {
+		color: desaturate(tint($link, 40%), 10%);
+		font-size: 4em;
+	}
+
+	&.simple {
+		@extend .icon-clock;
+	}
+
+	&.customize {
+		@extend .icon-code;
+	}
+
+	&.size {
+		@extend .icon-gauge;
 	}
 }
 
@@ -377,7 +431,7 @@ body {
 
 .author-link {
 	color: $link;
-	display: block;
+	display: inline-block;
 	font-size: 1.2em;
 
 	&:hover {
@@ -411,8 +465,54 @@ pre {
 	padding: 6px 10px;
 }
 
-@media screen and (max-width: 520px){
+@media screen and (min-width: 40.625em) { // 650px
+	.your-item {
+		@include column(2, 0, 4);
+	}
+}
 
+@media screen and (min-width: 60em) { // 960px
+	.page-title {
+		font-size: 4.125em;
+		left: -18px;
+		text-shadow: 0 -2px 0 saturate(shade($header_bg, 30%), 35%);
+
+		&:before {
+			font-size: 100px;
+			right: -34px;
+			top: -9px
+		}
+	}
+
+	.page-byline {
+		font-size: 1.2em;
+	}
+
+	.main {
+		padding: 0 16.3043478%;
+	}
+
+	.scroll-nav {
+		margin-left: -14.1304348%;
+		width: 11.9565217%;
+	}
+
+	.scroll-nav-heading {
+		text-align: center;
+		width: auto;
+	}
+
+	.scroll-nav-item {
+		width: auto;
+
+		&.active {
+			padding-left: 10px;
+		}
+	}
+
+	.feature {
+		@include column(3, 10px, 9);
+	}
 }
 
 

@@ -4,6 +4,7 @@
 <title>jQuery scrollNav</title>
 <meta nam='description' content='A jQuery plugin to build a sticky navigation of a article’s sections with highlighting while scrolling.'>
 <meta name='keywords' content='sticky nav, scrolling nav, navigation, james wilson, jimmynotjim, JS, javascript'>
+<meta name="viewport" content="initial-scale=1">
 <link rel='stylesheet' href='assets/css/style.css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800|Vollkorn:400italic,700italic,400,700|Alfa+Slab+One' rel='stylesheet' type='text/css'>
 </head>
@@ -15,25 +16,29 @@
 
 	<div class="main" role="main">
 		<article class="post-article">
-			<div class="all-yours">
-				<a href="https://github.com/jimmynotjim/scrollNav/archive/master.zip" class="grab-it">Grab the Source</a>
-				<a href="https://github.com/jimmynotjim/scrollNav" class="fork-it">Fork the Repo</a>
-			</div>
-			<p class="intro">scrollNav is a light jQuery that grabs your page's existing content, divides it up into logical sections and builds a customizable scrolling sidebar navigation. Scroll this page and watch it follow along w/ you.</p>
+			<ul class="all-yours">
+				<li class="your-item">
+					<a href="https://github.com/jimmynotjim/scrollNav/archive/master.zip" class="grab-it">Grab the Source</a>
+				</li>
+				<li class="your-item">
+					<a href="https://github.com/jimmynotjim/scrollNav" class="fork-it">Fork the Repo</a>
+				</li>
+			</ul>
+			<p class="intro">scrollNav is a light jQuery plugin that grabs your page's existing content, divides it up into logical sections and builds a customizable scrolling sidebar navigation. Scroll this page and watch it follow along w/ you.</p>
 
 			<h2>Features</h2>
 			<ul class="features-list">
-				<li>
+				<li class="feature simple">
 					<h3>Simple to setup</h3>
-					<p>With a single file import and function in your footer, you're on your way.</p>
+					<p>A single file import and function in your footer and you're on your way.</p>
 				</li>
-				<li>
+				<li class="feature customize">
 					<h3>Fully Customizable</h3>
-					<p>Very little styling is set for you, but the bit that is, is fully customizable.</p>
+					<p>All the styling is up to you and the few bits controled by the plugin editable</p>
 				</li>
-				<li>
+				<li class="feature size">
 					<h3>Tiny Size</h3>
-					<p>At 1.8kb min'd, scrollNav is pretty unintrusive.</p>
+					<p>Damn right it's fast! At 1.8kb min'd, scrollNav is pretty unintrusive.</p>
 				</li>
 			</ul>
 
@@ -134,27 +139,13 @@ $('.post-article').scrollNav({
 
 			<h2>Authors</h2>
 
-			<div>
-				<p class="author-name">Written by James Wilson (@jimmynotjim)</p>
-				<ul class="author-details">
-					<li><a href="http://jimmynotjim.com" class="author-link home"></a></li>
-					<li><a href="http://github.com/jimmynotjim" class="author-link github"></a></li>
-					<li><a href="http://twitter.com/jimmynotjim" class="author-link twitter"></a></li>
-					<li><a href="http://dribbble.com/jimmynotjim" class="author-link dribbble"></a></li>
-				</ul>
-			</div>
+			<p class="author-name">Written by James Wilson (@jimmynotjim) <a href="http://jimmynotjim.com" class="author-link home"></a><a href="http://github.com/jimmynotjim" class="author-link github"></a><a href="http://twitter.com/jimmynotjim" class="author-link twitter"></a><a href="http://dribbble.com/jimmynotjim" class="author-link dribbble"></a></p>
 
-			<div>
-				<p class="author-name">With a bit of guidance from Eric Clemmons (@ericclemmons)</p>
-				<ul class="author-details">
-					<li><a href="http://github.com/ericclemmons" class="author-link github"></a></li>
-					<li><a href="http://twitter.com/ericclemmons" class="author-link twitter"></a></li>
-				</ul>
-			</div>
+			<p class="author-name">With a bit of guidance from Eric Clemmons (@ericclemmons) <a href="http://github.com/ericclemmons" class="author-link github"></a><a href="http://twitter.com/ericclemmons" class="author-link twitter"></a></p>
 
 			<h2>Colophon</h2>
-			<p>scrollNav logo is set in Alfa Slab One by <a href="http://jmsole.cl/">JM Solé</a>. Body text and headlines are set in Open Slab by <a href="http://www.ascendercorp.com/about/steve-matteson/">Steve Matteson</a>. Both are delivered using <a href="http://www.google.com/webfonts">Google Web Fonts</a>. Icons are Entypo by Daniel Buce.</p>
-			<p>This demo is hosted and powered by GitHub through GitHub Pages, built using Sublime Text 2, Codekit, and Anvil utilizing standard html5, jQuery and SCSS with the ResponsableCSS framework.</p>
+			<p>The scrollNav logo is set in Alfa Slab One by <a href="http://jmsole.cl/">JM Solé</a>. Body text and headlines are set in Open Slab by <a href="http://www.ascendercorp.com/about/steve-matteson/" rel="no-follow">Steve Matteson</a>. Both are delivered using <a href="http://www.google.com/webfonts" rel="no-follow">Google Web Fonts</a>. Icons are Entypo by <a href="http://www.danielbruce.se/" rel="no-follow">Daniel Buce</a> and were packaged using <a href="http://fontello.com" rel="no-follow">Fontello</a>.</p>
+			<p>This demo is hosted and powered by <a href="http://github.com" rel="no-follow">GitHub</a> through <a href="http://pages.github.com" rel="no-follow">GitHub Pages</a>, built using <a href="http://www.sublimetext.com/2" rel="no-follow">Sublime Text 2</a>, <a href="http://incident57.com/codekit/ rel="no-follow"">Codekit</a>, and <a href="http://anvilformac.com/" rel="no-follow">Anvil</a> utilizing standard html5, jQuery and SCSS with the <a href="http://responsablecss.com/" rel="no-follow">ResponsableCSS</a> framework.</p>
 		</article>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -163,11 +154,11 @@ $('.post-article').scrollNav({
 		$('.post-article').scrollNav({
 			sections: 'h2',
 			titleText: 'Sections',
-			fixedMargin: 65
+			fixedMargin: 60
 		});
-		var $item = $('.scroll-nav-link');
+		var $item = $('.scroll-nav-item');
 		$.each($item, function(){
-			$text = $(this).html().toLowerCase();
+			$text = $(this).find('a').html().toLowerCase();
 			$(this).addClass($text);
 		});
 	</script>
