@@ -864,10 +864,10 @@ hr {
 
 /* 'ꥁ' */
 .icon-clock:before, .feature.simple:before {
-  content: '\1f554';
+  content: '\a914';
 }
 
-/* '\1f554' */
+/* '\a914' */
 body {
   background: #fcfcfc;
 }
