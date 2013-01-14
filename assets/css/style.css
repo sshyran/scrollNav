@@ -864,7 +864,7 @@ hr {
 
 /* 'ꥁ' */
 .icon-clock:before, .feature.simple:before {
-  content: '🕔';
+  content: '\1f554';
 }
 
 /* '\1f554' */
