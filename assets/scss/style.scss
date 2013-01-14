@@ -430,15 +430,11 @@ body {
 }
 
 .author-link {
-	color: $link;
 	display: inline-block;
 	font-size: 1.2em;
 
 	&:hover {
 		@include transform(scale(1.4, 1.4));
-
-		background: none;
-		color: $link;
 	}
 
 	&.home {
