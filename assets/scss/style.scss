@@ -224,15 +224,15 @@ body {
 .main {
 	margin: 0 auto;
 	max-width: 1200px;
-	padding: 0 10%;
+	padding: 0 13%;
 	position: relative;
 }
 
 .scroll-nav {
-	margin-left: -10%;
+	margin-left: -13%;
 	position: absolute;
 	top: 74px;
-	width: 10%;
+	width: 13%;
 
 	&.fixed {
 		position: fixed;
@@ -242,8 +242,9 @@ body {
 
 .scroll-nav-heading {
 	display: block;
+	font-size: 24px;
 	font-weight: 800;
-	margin: 0 auto;
+	margin: 0 auto 10px;
 	overflow: hidden;
 	width: 1.7em;
 }
@@ -253,9 +254,11 @@ body {
 }
 
 .scroll-nav-item {
+	font-size: 30px;
+	line-height: 1.2em;
 	margin: 0 auto;
 	overflow: hidden;
-	width: 25px;
+	width: 40px;
 
 	&:before {
 		color: $link;
@@ -263,7 +266,7 @@ body {
 		position: absolute;
 		pointer-events: none;
 		text-align: center;
-		width: 25px;
+		width: 40px;
 	}
 
 	&:hover:before {
@@ -329,7 +332,7 @@ body {
 .scroll-nav-link {
 	display: block;
 	margin: 0 auto;
-	padding-left: 26px;
+	padding-left: 40px;
 }
 
 .post-article {
@@ -489,12 +492,12 @@ pre {
 	}
 
 	.main {
-		padding: 0 16.3043478%;
+		padding: 0 16.6666667%;
 	}
 
 	.scroll-nav {
-		margin-left: -14.1304348%;
-		width: 11.9565217%;
+		margin-left: -15.1041667%;
+		width: 13.5416667%;
 	}
 
 	.scroll-nav-heading {
@@ -503,11 +506,21 @@ pre {
 	}
 
 	.scroll-nav-item {
+		font-size: 19px;
+		overflow: visible;
 		width: auto;
 
 		&.active {
-			padding-left: 10px;
+			@include transform( scale(1.2, 1.2) );
 		}
+
+		&:before {
+			width: 30px;
+		}
+	}
+
+	.scroll-nav-link {
+		padding-left: 30px;
 	}
 
 	.feature {
