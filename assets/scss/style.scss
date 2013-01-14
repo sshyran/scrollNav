@@ -224,15 +224,15 @@ body {
 .main {
 	margin: 0 auto;
 	max-width: 1200px;
-	padding: 0 13%;
+	padding: 0 4.6875% 0 18.75%;
 	position: relative;
 }
 
 .scroll-nav {
-	margin-left: -13%;
+	margin-left: -15.625%;
 	position: absolute;
 	top: 74px;
-	width: 13%;
+	width: 12.5%;
 
 	&.fixed {
 		position: fixed;
@@ -241,12 +241,9 @@ body {
 }
 
 .scroll-nav-heading {
-	display: block;
+	display: none;
 	font-size: 24px;
 	font-weight: 800;
-	margin: 0 auto 10px;
-	overflow: hidden;
-	width: 1.7em;
 }
 
 .scroll-nav-list {
@@ -332,7 +329,7 @@ body {
 .scroll-nav-link {
 	display: block;
 	margin: 0 auto;
-	padding-left: 40px;
+	padding-left: 42px;
 }
 
 .post-article {
