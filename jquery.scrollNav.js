@@ -99,17 +99,28 @@
 			// active classes
 
 			$(window).scroll(function() {
-				var winTop		= $(window).scrollTop();
-				var halfVP		= $(window).height() * 0.5;
+				var $inViewArray	= [];
+				var $outViewArray	= [];
+				var winTop			= $(window).scrollTop();
+				var winBottom		= winTop + $(window).height();
 
 				if( winTop > (navOffset - settings.fixedMargin) ) { $nav.addClass('fixed'); }
 				else { $nav.removeClass('fixed'); }
 
 				$.each($sectionArray, function() {
-					if( this.offset > winTop - settings.fixedMargin &&  this.offset < (winTop + halfVP) ) {
-						$nav.find('li').removeClass('active');
-						$nav.find('a[href="#' + this.id + '"]').parents('li').addClass('active');
+					if( this.offset > winTop &&  this.offset < winBottom ) {
+						$inViewArray.push(this);
+					} else {
+						$outViewArray.push(this);
 					}
+				});
+
+				$.each($inViewArray, function() {
+					$nav.find('a[href="#' + this.id + '"]').parents('li').addClass('active');
+				});
+
+				$.each($outViewArray, function() {
+					$nav.find('a[href="#' + this.id + '"]').parents('li').removeClass('active');
 				});
 			});
 		};
