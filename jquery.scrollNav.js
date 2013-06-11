@@ -12,7 +12,9 @@
 			fixedMargin: 40,
 			animated: true,
 			speed: 500,
-			showHeadline: true
+			showHeadline: true,
+			showTopLink: true,
+			location: 'insertBefore'
 		};
 
 		$.extend(settings, options);
@@ -28,6 +30,8 @@
 		// Initial setup of the section array
 
 		var setupContainer = function() {
+			if ( settings.showTopLink === false ) { return; }
+
 			var containerID	= $container.attr('id');
 			var offset		= $container.offset().top;
 
@@ -47,7 +51,7 @@
 			$sections.each(function(i) {
 				var sectionID	= 'jumpNav-' + (i + 1);
 				var $offset		= $(this).offset().top;
-				var $text		= $(this).html();
+				var $text		= $(this).text();
 
 				$(this).attr('id', sectionID);
 				$sectionArray.push( {id: sectionID, offset: $offset, text: $text} );
@@ -120,7 +124,7 @@
 		// Now add the nav to our page
 
 		if ($container.length !== 0 && $sections.length !== 0) {
-			$nav.insertBefore($container);
+			$nav[settings.location]($container);
 		}
 		else if ($container.length === 0) {
 			console.log("Build failed, scrollNav could not find '" + $container.selector + "'");
