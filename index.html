@@ -118,9 +118,14 @@
 <p><pre>
 $('.post-article').scrollNav({
     sections: 'h3',
-    titleText: 'Scroll To',
+    titleText: 'Jump To',
     fixedMargin: 40,
-    animated: true
+    animated: true,
+    speed: 500,
+    showHeadline: true,
+    showTopLink: true,
+    topLinkText: 'Top',
+    location: 'insertBefore'
 });
 </pre></p>
 
@@ -130,7 +135,7 @@ $('.post-article').scrollNav({
 
 			<h3>Title Text</h3>
 
-			<p>scrollNav&#8217;s default title text is &#8216;Jump To&#8217;, but feel free to change it to whatever works for you, like &#8216;Article Sections&#8217; or &#8216;Page Navigation&#8217;</p>
+			<p>scrollNav&#8217;s default title text is &#8216;Scroll To&#8217;, but feel free to change it to whatever works for you, like &#8216;Article Sections&#8217; or &#8216;Page Navigation&#8217;</p>
 
 			<h3>Fixed Margin</h3>
 
@@ -146,11 +151,15 @@ $('.post-article').scrollNav({
 
 			<h3>Show Headline</h3>
 
-			<p>Set this to <code>false</code> to remove the titleText entirely.</p>
+			<p>Set this to <code>false</code> to remove the <code>titleText</code> entirely.</p>
 
 			<h3>Show Top Link</h3>
 
-			<p>Set this to <code>false</code> to remove the Top nav item entirely.</p>
+			<p>Set this to <code>false</code> to remove the <code>Top</code> nav item entirely.</p>
+
+			<h3>Top Link Text</h3>
+
+			<p>scrollNav&#8217;s default return to the top link is &#8216;Top&#8217;, but feel free to change it to whatever works for you.</p>
 
 			<h3>Location</h3>
 
