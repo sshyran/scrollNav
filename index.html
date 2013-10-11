@@ -25,21 +25,25 @@
 </head>
 <body>
 	<header class="page__header" role="banner">
-		<h1 class="page__title"><span>jQuery scrollNav.js</span></h1>
-		<h2 class="page__byline">A jQuery plugin to automatically build a scrolling navigation menu</h2>
+		<h1 class="page__title"><span>scrollNav.js</span></h1>
 	</header>
 
 	<div class="main" role="main">
+		<h2 class="overview">A simple jQuery plugin that auto builds scrolling navigation menus</h2>
+
+		<ul class="all-yours">
+			<li class="your-item">
+				<a href="https://github.com/jimmynotjim/scrollNav/archive/master.zip" class="grab-it">Grab the Source</a>
+			</li>
+			<li class="your-item">
+				<a href="https://github.com/jimmynotjim/scrollNav" class="fork-it">Fork the Repo</a>
+			</li>
+		</ul>
+
 		<article class="post__article">
-			<ul class="all-yours">
-				<li class="your-item">
-					<a href="https://github.com/jimmynotjim/scrollNav/archive/master.zip" class="grab-it">Grab the Source</a>
-				</li>
-				<li class="your-item">
-					<a href="https://github.com/jimmynotjim/scrollNav" class="fork-it">Fork the Repo</a>
-				</li>
-			</ul>
-			<p class="intro">scrollNav is a light jQuery plugin that grabs your page's existing content, divides it up into logical sections and builds a customizable scrolling sidebar navigation. Scroll this page and watch the nav follow along with you.</p>
+
+			<h2>Description</h2>
+			<p>scrollNav is a light jQuery plugin that grabs your page's existing content, divides it up into logical sections and builds a customizable scrolling sidebar navigation. Scroll this page and watch the nav follow along with you.</p>
 
 			<h2>Features</h2>
 			<ul class="features-list">
@@ -118,6 +122,7 @@
 $('.post-article').scrollNav({
     sections: 'h2',
     subSections: false,
+    sectionElem: 'section',
     showHeadline: true,
     headlineText: 'Scroll To',
     showTopLink: true,
@@ -126,22 +131,27 @@ $('.post-article').scrollNav({
     scrollOffset: 40,
     animated: true,
     speed: 500,
-    location: 'insertBefore',
+    insertTarget: this.selector,
+    insertLocation: 'insertBefore',
     arrowKeys: false
 });
 </pre>
 
 			<h3>Sections</h3>
 
-			<p>As mentioned, the script automatically searches for <code>&lt;h2&gt;</code>s within the target article. If your page structure differs, feel free to target another element, like a <code>&lt;h3&gt;</code> or <code>&lt;h4&gt;</code> or even a class, like <code>.scroll-headline</code>.</p>
+			<p>As mentioned, the script automatically searches for <code>&lt;h2&gt;</code>s within the target article. If your page structure differs, feel free to target another element, like an <code>&lt;h3&gt;</code> or <code>&lt;h4&gt;</code> or even a class, like <code>.scroll-headline</code>.</p>
 
 			<h3>Sub-sections</h3>
 
-			<p>The plugin supports nesting sub-sections within each section in the final nav. Available selectors are the same as Sections.</p>
+			<p>Set to <code>false</code> by default, the plugin supports nesting sub-sections within each section in the final nav. Available selectors are the same as Sections.</p>
+
+			<h3>Section Wrapper Element</h3>
+
+			<p>If your article already contains <code>section</code> tags, you'll want to change this to <code>'div'</code>. Sub-sections aren't affected by this option.
 
 			<h3>Show Headline</h3>
 
-			<p>Set this to <code>false</code> to remove the <code>headlineText</code> entirely.</p>
+			<p>Set this to <code>false</code> to remove the Headline Text entirely.</p>
 
 			<h3>Headline Text</h3>
 
@@ -153,7 +163,7 @@ $('.post-article').scrollNav({
 
 			<h3>Top Link Text</h3>
 
-			<p>scrollNav&#8217;s default return to the top link is &#8216;Top&#8217;, but feel free to change it to whatever works for you.</p>
+			<p>scrollNav&#8217;s default return to the top link text is &#8216;Top&#8217;, but feel free to change it to whatever works for you.</p>
 
 			<h3>Fixed Margin</h3>
 
@@ -171,14 +181,17 @@ $('.post-article').scrollNav({
 
 			<p>Change this to either increase or decrease the animated page scroll speed.</p>
 
+			<h3>Insertion Target</h3>
 
-			<h3>Insert Location</h3>
+			<p>If you need to insert the nav relative to an element other than the one scrollNav is initialized on, you can change it here.</p>
+
+			<h3>Insertion Location</h3>
 
 			<p>You can pass any of the following jQuery insertion methods to change where scrollNav is inserted in relation to the targeted container. <code>insertBefore</code>, <code>prependTo</code>, <code>appendTo</code>, or <code>insertAfter</code></p>
 
 			<h3>Arrow Key Navigation</h3>
 
-			<p>Set this to `true` to allow up/down arrow keys to jump through each section.</p>
+			<p>Set to <code>false</code> by default, change this to `true` to allow up/down arrow keys to jump through each section.</p>
 
 			<h2>Errors</h2>
 
@@ -190,34 +203,38 @@ $('.post-article').scrollNav({
 
 			<h2>License</h2>
 
-			<p>scrollNav is Copyright &copy; 2013 James Wilson, released under the <a href="https://github.com/jimmynotjim/scrollNav/blob/master/LICENSE-MIT">MIT license</a>. This means you can re-create, edit or share the plugin as long as you maintain the same open licensing.</p>
+			<p>scrollNav is Copyright &copy; 2012-2013 James Wilson, released under the <a href="https://github.com/jimmynotjim/scrollNav/blob/master/LICENSE-MIT">MIT license</a>. This means you can re-create, edit or share the plugin as long as you maintain the same open licensing.</p>
 
 			<h2>Authors</h2>
 
 			<p class="author__name">Written by James Wilson (@jimmynotjim) <a href="http://jimmynotjim.com" class="author__link home"></a><a href="http://github.com/jimmynotjim" class="author__link github"></a><a href="http://twitter.com/jimmynotjim" class="author__link twitter"></a><a href="http://dribbble.com/jimmynotjim" class="author__link dribbble"></a></p>
 
-			<h3>With a bit of guidance from:</h3>
+			<h3>With a lots of help from:</h3>
 
 			<ul>
 				<li class="author__name">Eric Clemmons (@ericclemmons) <a href="http://github.com/ericclemmons" class="author__link github"></a><a href="http://twitter.com/ericclemmons" class="author__link twitter"></a></li>
+
+				<li class="author__name">Jeff Byrnes (@jeffbyrnes) <a href="http://github.com/jeffbyrnes" class="author__link github"></a><a href="http://twitter.com/berkleebassist" class="author__link twitter"></a></li>
 
 				<li class="author__name">Jeff Coburn (@coburnicus) <a href="http://github.com/coburnicus" class="author__link github"></a><a href="http://twitter.com/coburnicus" class="author__link twitter"></a></li>
 
 				<li class="author__name">Jen Germann (@germanny) <a href="http://github.com/germannys" class="author__link github"></a><a href="http://twitter.com/germanny" class="author__link twitter"></a></li>
 
 				<li class="author__name">Wizcover (@wizcover) <a href="http://github.com/wizcover" class="author__link github"></a></li>
+
+				<li class="author__name">Meghdad Hadidi (@MeghdadHadidi) <a href="http://github.com/MeghdadHadidi" class="author__link github"></a></li>
 			</ul>
 
 			<h2>Colophon</h2>
-			<p>The scrollNav logo is set in Alfa Slab One by <a href="http://jmsole.cl/">JM Sol&#233;</a>. Body text and headlines are set in Open Slab by <a href="http://www.ascendercorp.com/about/steve-matteson/" rel="no-follow">Steve Matteson</a>. Both are delivered using <a href="http://www.google.com/webfonts" rel="no-follow">Google Web Fonts</a>. Icons are Entypo by <a href="http://www.danielbruce.se/" rel="no-follow">Daniel Buce</a> and were packaged using <a href="http://fontello.com" rel="no-follow">Fontello</a>.</p>
-			<p>This demo is hosted and powered by <a href="http://github.com" rel="no-follow">GitHub</a> through <a href="http://pages.github.com" rel="no-follow">GitHub Pages</a>, built using <a href="http://www.sublimetext.com/2" rel="no-follow">Sublime Text 2</a>, <a href="http://incident57.com/codekit/ rel="no-follow"">Codekit</a>, and <a href="http://anvilformac.com/" rel="no-follow">Anvil</a> utilizing standard html5, jQuery and SCSS with the <a href="http://responsablecss.com/" rel="no-follow">ResponsableCSS</a> framework.</p>
+			<p>The scrollNav logo is set in Alfa Slab One by <a href="http://jmsole.cl/">JM Sol&#233;</a>. Body text and headlines are set in Open Slab by <a href="http://www.ascendercorp.com/about/steve-matteson/">Steve Matteson</a>. Both are delivered using <a href="http://www.google.com/webfonts">Google Web Fonts</a>. Icons are Entypo by <a href="http://www.danielbruce.se/">Daniel Buce</a> and were packaged using <a href="http://fontello.com">Fontello</a>.</p>
+			<p>This demo is hosted and powered by <a href="http://github.com">GitHub</a> through <a href="http://pages.github.com">GitHub Pages</a>, built using <a href="http://www.sublimetext.com/2">Sublime Text 2</a>, <a href="http://incident57.com/codekit/">Codekit</a> utilizing standard html5, jQuery and SCSS with the <a href="http://responsablecss.com/">ResponsableCSS</a> framework.</p>
 		</article>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollNav.min.js"></script>
 	<script>
 		$('.post__article').scrollNav({
-			showHeadline: false,
+			headlineText: 'srollNav',
 			fixedMargin: 60,
 			scrollOffset: 80,
 			arrowKeys: true

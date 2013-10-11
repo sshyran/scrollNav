@@ -35,6 +35,7 @@ $baseline: 100%;
 
 // Font variables
 $body_color: #444;
+$body_bg: #f8f7f3;
 $header_bg: rgb(19, 130, 173);
 $heading_color: #111;
 
@@ -67,28 +68,6 @@ $green: #6bac60;
 	}
 	&:after{
 	    clear:both;
-	}
-}
-
-@mixin linebehind($top: 1.1em, $thickness:2px, $color: #333) {
-	position: relative;
-	text-align: center;
-
-	&::before {
-		border-top: $thickness solid $color;
-		content: '';
-		margin: 0 auto;
-		position: absolute;
-		top: $top;
-		right: 0;
-		left: 0;
-		width: 75%;
-		z-index: -1;
-	}
-
-	span {
-		background: #fff;
-		padding: 0 .5em;
 	}
 }
 
@@ -173,14 +152,15 @@ $green: #6bac60;
 .icon-clock:before { content: '\a914'; } /* '\a914' */
 
 body {
-	background: #fcfcfc;
+	background: $body_bg;
 }
+
 .page__header {
 	@include box-shadow(0 2px 10px 0px #777, 0 -1px 0 rgba(255,255,255,0.16) inset);
 
 	background-color: $header_bg;
 	border-bottom: 1px solid saturate(shade($header_bg, 30%), 45%);
-	margin-bottom: 1em;
+	margin-bottom: 50px;
 	padding: 1.15em 10%;
 	text-align: center;
 
@@ -189,8 +169,7 @@ body {
 	}
 }
 
-.page__title,
-.page__byline {
+.page__title {
 	color: #fff;
 }
 
@@ -214,24 +193,24 @@ body {
 	}
 }
 
-.page__byline {
-	@extend .delta;
-
-	margin-bottom: .1em;
-	padding-top: .4em;
+.overview {
+	font-size: 1.3em;
+	margin: 0 auto 40px;
+	max-width: 580px;
+	text-align: center;
 }
 
 .main {
-	margin: 0 auto;
+	@extend .clearfix;
+
+	margin: 0 auto 50px;
 	max-width: 1200px;
-	padding: 0 4.6875% 0 18.75%;
+	padding: 0 4.6875%;
 	position: relative;
 }
 
 .scroll-nav {
-	margin-left: -15.625%;
 	position: absolute;
-	top: 74px;
 
 	&.fixed .scroll-nav__wrapper {
 		position: fixed;
@@ -239,11 +218,42 @@ body {
 	}
 }
 
+.scroll-nav__wrapper {
+	border: 1px solid saturate(shade($header_bg, 20%), 35%);
+	background-color: saturate(tint($header_bg, 7%), 5%);
+	border-radius: 6px;
+	padding: 10px 5px;
+}
+
+.scroll-nav__heading {
+	@extend .icon-address;
+
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	display: block;
+	font-family: "Alfa Slab One", Georgia, serif;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+	overflow: hidden;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	text-shadow: 0 -1px 0 saturate(shade($header_bg, 30%), 35%);
+	width: 40px;
+
+	&:before {
+		font-size: 40px;
+	}
+}
+
 .scroll-nav__list {
 	@extend .unstyled-list;
+
+	margin-bottom: 0;
 }
 
 .scroll-nav__item {
+	font-weight: 600;
 	font-size: 30px;
 	line-height: 1.2em;
 	margin: 0 auto;
@@ -251,7 +261,7 @@ body {
 	width: 40px;
 
 	&:before {
-		color: $link;
+		color: #fff;
 		display: block;
 		position: absolute;
 		pointer-events: none;
@@ -259,11 +269,7 @@ body {
 		width: 40px;
 	}
 
-	&:hover:before {
-		color: $link_hover;
-	}
-
-	&.top {
+	&.description {
 		@extend .icon-publish;
 	}
 
@@ -302,16 +308,7 @@ body {
 	&.active {
 		@include transform( scale(1.3, 1.3) );
 
-		color: $link_hover;
 		font-weight: 800;
-
-		.scroll-nav-link {
-			color: $link_hover;
-		}
-
-		&:before {
-			color: $link_hover;
-		}
 
 		a:hover {
 			font-weight: 800;
@@ -320,18 +317,31 @@ body {
 }
 
 .scroll-nav__link {
+	color: #fff;
 	display: block;
 	margin: 0 auto;
 	padding-left: 42px;
+
+	&:hover {
+		color: #fff;
+	}
 }
 
 .post__article {
-	padding: 80px 0;
+	background-color: #fff;
+	border: 1px solid darken($body_bg, 10%);
+	border-radius: 6px;
+	float: right;
+	margin-left: 65px;
+	padding: 20px;
 }
 
 .all-yours {
 	@extend .clearfix;
 	@extend .unstyled-list;
+
+	max-width: 580px;
+	margin: 0 auto 20px;
 }
 
 .your-item {
@@ -432,11 +442,21 @@ body {
 	}
 }
 
-pre {
+pre,
+code {
+	border-radius: 3px;
 	background-color: darken(#fff, 3%);
+	border: 1px solid darken(#fff, 8%);
 	font-size: 75%;
 	line-height: 18px;
-	padding: 6px 10px;
+}
+
+pre {
+	padding: 10px;
+}
+
+code {
+	padding: 3px 6px;
 }
 
 @media screen and (min-width: 40.625em) { // 650px
@@ -446,6 +466,7 @@ pre {
 }
 
 @media screen and (min-width: 60em) { // 960px
+
 	.page__title {
 		font-size: 4.125em;
 		left: -18px;
@@ -458,26 +479,51 @@ pre {
 		}
 	}
 
-	.page__byline {
-		font-size: 1.2em;
+	.overview {
+		font-size: 2em;
+		max-width: 700px;
+	}
+
+	.all-yours {
+		margin-bottom: 40px;
 	}
 
 	.main {
-		padding: 0 16.6666667%;
+		padding: 0 7%;
 	}
 
-	.scroll-nav {
-		margin-left: -15.1041667%;
+	.post__article {
+		margin-left: 210px;
+		padding: 30px;
+	}
+
+	.scroll-nav__wrapper {
+		padding: 15px 10px;
+	}
+
+	.scroll-nav__heading {
+		font-size: 1.7em;
+		text-indent: -16px;
+		width: 170px;
+
+		&:before {
+			font-size: 1.654411765em;
+			position: relative;
+			right: -0.30em;
+			top: -0.07em;
+		}
 	}
 
 	.scroll-nav__item {
 		font-size: 19px;
 		line-height: 1.4em;
 		overflow: visible;
-		width: auto;
+		width: 170px;
 
 		&.active {
 			@include transform( scale(1.2, 1.2) );
+
+			padding-left: 0.5em;
 		}
 
 		&:before {
@@ -493,5 +539,4 @@ pre {
 		@include column(3, 10px, 9);
 	}
 }
-
 
