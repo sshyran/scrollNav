@@ -6,3 +6,7 @@
 # Codekit Files
 
 /codekit-config.json
+
+# Node Files
+/node_modules/
+npm-debug.log
