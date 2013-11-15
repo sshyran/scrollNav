@@ -10,3 +10,4 @@
 # Node Files
 /node_modules/
 npm-debug.log
+bower_components
