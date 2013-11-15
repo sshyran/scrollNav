@@ -133,7 +133,10 @@ $('.post-article').scrollNav({
     speed: 500,
     insertTarget: this.selector,
     insertLocation: 'insertBefore',
-    arrowKeys: false
+    arrowKeys: false,
+    onInit: null,
+    onRender: null,
+    onDestroy: null
 });
 </pre>
 
@@ -193,6 +196,17 @@ $('.post-article').scrollNav({
 
 			<p>Set to <code>false</code> by default, change this to `true` to allow up/down arrow keys to jump through each section.</p>
 
+			<h3>Callback functions</h3>
+
+			<p>There are three new callback functions that you can utilize to accomodate anything you need to run after specific scrollNav events. They are onInit, onRender, and onDestroy. Add them to your options just like any other and they should look like this:</p>
+
+<pre>
+$('.post__article').scrollNav({
+    onInit: function() {
+        callback actions in here
+    }
+});
+</pre>
 			<h2>Errors</h2>
 
 			<p>The plugin will refuse to build and log an error message if it doesn&#8217;t find your desired container or any sections within the container. If the nav doesn&#8217;t show up on load, check your browser&#8217;s console.</p>
