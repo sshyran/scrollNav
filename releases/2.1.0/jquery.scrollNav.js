@@ -1,4 +1,4 @@
-/*! scrollNav - v2.0.2 - 2013-11-15
+/*! scrollNav - v2.1.0 - 2013-11-15
 * http://scrollnav.com
 * Copyright (c) 2013 James Wilson; Licensed MIT */
 (function($) {
