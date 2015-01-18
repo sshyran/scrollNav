@@ -114,6 +114,44 @@
 
 			<p>There are loading hooks added to the body element (similar to how Typekit handles font loading) to allow for css transitions or any other changes in css you'd need. When the plug-in starts <code>sn-loading</code> is added to the body class and is replaced by <code>sn-active</code> when the plugin is successful or <code>sn-failed</code> if it fails.</p>
 
+      <h2>Destroy scrollNav</h2>
+
+      <p>In addition to the initialization, there is now a destroy method available should you need it. To destroy scrollNav and remove all it's DOM changes use:</p>
+
+      <pre>$('.post__article').scrollNav('destroy');</pre>
+
+
+      <h2>Reset Positions on DOM Change</h2>
+
+      <p>There are a couple of ways you can reset scrollNav's positions when the DOM changes:</p>
+
+      <h3>Manually</h3>
+
+      <p>Simply call the `resetPos` method on your own:</p>
+
+      <pre>$.fn.scrollNav('resetPos');</pre>
+
+      <h3>Automatically</h3>
+
+      <p>Utilize [mutation observers][21] to call the `resetPos` method automatically:</p>
+
+<pre>
+var $;
+var observer_target = document.querySelector('.post__article');
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function() {
+    $.fn.scrollNav('resetPos');
+  });
+});
+var observer_config = {
+  attributes: true,
+  childList: true,
+  characterData: true,
+  subtree: true
+};
+observer.observe(observer_target, observer_config);
+</pre>
+
 			<h2>Options</h2>
 
 			<p>There are a few customizable options in scrollNav using key : value pairs. Here are the defaults.</p>
@@ -134,6 +172,7 @@ $('.post-article').scrollNav({
     insertTarget: this.selector,
     insertLocation: 'insertBefore',
     arrowKeys: false,
+    scrollToHash: true,
     onInit: null,
     onRender: null,
     onDestroy: null
@@ -151,6 +190,11 @@ $('.post-article').scrollNav({
 			<h3>Section Wrapper Element</h3>
 
 			<p>If your article already contains <code>section</code> tags, you'll want to change this to <code>'div'</code>. Sub-sections aren't affected by this option.
+
+      <h3>Class Name</h3>
+
+      <p>If you want to change the default `scroll-nav` class naming used throughout (including in the BEM syntax for the child elems), you can do so by changing this value to your own.</p>
+
 
 			<h3>Show Headline</h3>
 
@@ -196,6 +240,10 @@ $('.post-article').scrollNav({
 
 			<p>Set to <code>false</code> by default, change this to `true` to allow up/down arrow keys to jump through each section.</p>
 
+      <h3>Scroll to hash</h3>
+
+      <p>Set this to false if you use hashed (http://example.com/#home) values for routing.</p>
+
 			<h3>Callback functions</h3>
 
 			<p>There are three new callback functions that you can utilize to accomodate anything you need to run after specific scrollNav events. They are onInit, onRender, and onDestroy. Add them to your options just like any other and they should look like this:</p>
@@ -217,7 +265,7 @@ $('.post__article').scrollNav({
 
 			<h2>License</h2>
 
-			<p>scrollNav is Copyright &copy; 2012-2013 James Wilson, released under the <a href="https://github.com/jimmynotjim/scrollNav/blob/master/LICENSE-MIT">MIT license</a>. This means you can re-create, edit or share the plugin as long as you maintain the same open licensing.</p>
+			<p>scrollNav is Copyright &copy; 2012-2015 James Wilson, released under the <a href="https://github.com/jimmynotjim/scrollNav/blob/master/LICENSE-MIT">MIT license</a>. This means you can re-create, edit or share the plugin as long as you maintain the same open licensing.</p>
 
 			<h2>Authors</h2>
 
@@ -237,6 +285,10 @@ $('.post__article').scrollNav({
 				<li class="author__name">Wizcover (@wizcover) <a href="http://github.com/wizcover" class="author__link github"></a></li>
 
 				<li class="author__name">Meghdad Hadidi (@MeghdadHadidi) <a href="http://github.com/MeghdadHadidi" class="author__link github"></a></li>
+
+        <li class="author__name">Marc Amos (@marcams) <a href="http://github.com/marcamos" class="author__link github"></a></li>
+
+        <li class="author__name">Felix Borzik (@Borzik) <a href="http://github.com/borzik" class="author__link github"></a></li>
 			</ul>
 
 			<h2>Colophon</h2>
